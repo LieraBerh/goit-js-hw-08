@@ -88,13 +88,17 @@ galleryEl.addEventListener('click', handleGalleryClick);
 
 function handleGalleryClick(evt) {
   evt.preventDefault();
+
   if (evt.target.nodeName !== 'IMG') {
     return;
   }
+
   const originalSrc = evt.target.dataset.source;
+
   const modal = basicLightbox.create(`<img src="${originalSrc}">`, {
     closable: true,
     className: 'modal-overlay',
   });
+
   modal.show();
 }
